@@ -7,3 +7,5 @@ Entry name: Case
   Validate: OR schedule board — Bay 4 booking.
 - **Case 2** (Priya Raman): Bay 9, ESI 1, motorcycle collision. Trauma team activated.
   Validate: Trauma activation log and Bay 9 on the tracking board.
+- **Case 3** (Elena Ortiz): Bay 12, ESI 2, upper GI bleed. Needs endoscopy, possible OR. Anesthesia to review airway.
+  Validate: Bay 12 orders and GI consult in the EHR.
