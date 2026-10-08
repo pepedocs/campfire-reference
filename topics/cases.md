@@ -5,3 +5,5 @@ Entry name: Case
 
 - **Case 1** (Priya Raman, Elena Ortiz, Sam Okafor): Bay 4, ESI 2, perforated appendix. Accepted by general surgery, booked as urgent for about 23:30.
   Validate: OR schedule board — Bay 4 booking.
+- **Case 2** (Priya Raman): Bay 9, ESI 1, motorcycle collision. Trauma team activated.
+  Validate: Trauma activation log and Bay 9 on the tracking board.
