@@ -7,5 +7,5 @@ Entry name: Case
   Validate: OR schedule board — Bay 4 booking.
 - **Case 2** (Priya Raman, Sam Okafor): Bay 9, ESI 1, motorcycle collision. Splenic injury, taken to OR 1 as priority. This bumps Case 1 until the second OR team arrives (see Capacity 3).
   Validate: OR 1 on the OR schedule board.
-- **Case 3** (Elena Ortiz): Bay 12, ESI 2, upper GI bleed. Needs endoscopy, possible OR. Anesthesia to review airway.
-  Validate: Bay 12 orders and GI consult in the EHR.
+- **Case 3** (Elena Ortiz, Hana Kim): Bay 12, ESI 2, upper GI bleed. Airway reviewed — intubate before endoscopy. Endoscopy booked in OR 2 after Case 1.
+  Validate: Anesthesia pre-op note and OR 2 schedule.
