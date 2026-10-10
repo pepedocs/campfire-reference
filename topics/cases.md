@@ -5,7 +5,7 @@ Entry name: Case
 
 - **Case 1** (Priya Raman, Elena Ortiz, Sam Okafor): Resolved. Bay 4 laparoscopic appendectomy done in OR 2. Admitted to ward 5W.
   Validate: Op note in the EHR and bed assignment on the bed board.
-- **Case 2** (Priya Raman, Sam Okafor): Bay 9, ESI 1, motorcycle collision. Splenic injury, taken to OR 1 as priority. This bumps Case 1 until the second OR team arrives (see Capacity 3).
-  Validate: OR 1 on the OR schedule board.
+- **Case 2** (Priya Raman, Sam Okafor): Resolved. Bay 9 trauma — splenectomy done, stable, moved from ICU to ward 6E.
+  Validate: Op note and bed assignment on the bed board.
 - **Case 3** (Elena Ortiz, Hana Kim): Bay 12 upper GI bleed. Endoscopy done, bleeding vessel clipped. Admitted to ICU for monitoring.
   Validate: Endoscopy report and ICU bed assignment.
