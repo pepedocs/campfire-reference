@@ -7,5 +7,5 @@ Entry name: Case
   Validate: Op note in the EHR and bed assignment on the bed board.
 - **Case 2** (Priya Raman, Sam Okafor): Resolved. Bay 9 trauma — splenectomy done, stable, moved from ICU to ward 6E.
   Validate: Op note and bed assignment on the bed board.
-- **Case 3** (Elena Ortiz, Hana Kim): Bay 12 upper GI bleed. Endoscopy done, bleeding vessel clipped. Admitted to ICU for monitoring.
-  Validate: Endoscopy report and ICU bed assignment.
+- **Case 3** (Elena Ortiz, Hana Kim): Resolved. Bay 12 GI bleed stable, stepped down from ICU to the medical ward.
+  Validate: Bed assignment on the bed board.
