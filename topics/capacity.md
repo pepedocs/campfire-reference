@@ -9,3 +9,5 @@ Entry name: Capacity
   Validate: OR schedule board and the on-call roster.
 - **Capacity 4** (Priya Raman): Waiting room at 22. Longest wait for ESI 3 is 2 hours.
   Validate: Waiting count and longest wait on the ED tracking board.
+- **Capacity 5** (Marcus Lee): ED on diversion for non-critical ambulances during code orange.
+  Validate: Diversion status on the regional ambulance portal.
