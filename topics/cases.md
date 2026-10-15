@@ -7,5 +7,5 @@ Entry name: Case
   Validate: Op note and bed assignment on the bed board.
 - **Case 3** (Elena Ortiz, Hana Kim): Resolved. Bay 12 GI bleed stable, stepped down from ICU to the medical ward.
   Validate: Bed assignment on the bed board.
-- **Case 4** (Priya Raman): Bay 2, ESI 2, elderly fall with hip fracture. On a blood thinner — needs reversal before surgery. Orthopedics consulted.
-  Validate: Bay 2 orders and the ortho consult in the EHR.
+- **Case 4** (Priya Raman, Hana Kim): Bay 2, hip fracture. Anticoagulation reversed. Booked for OR tomorrow morning, spinal anesthesia planned.
+  Validate: OR schedule board and anesthesia pre-op note.
