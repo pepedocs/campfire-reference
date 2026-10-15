@@ -13,3 +13,5 @@ Entry name: Capacity
   Validate: Diversion status on the regional ambulance portal.
 - **Capacity 6** (Tom Becker): Today's elective OR list is suspended. ORs 1–4 are held for the mass-casualty incident (see Alert 3).
   Validate: OR schedule board.
+- **Capacity 7** (Grace Ali): Surge unit opened in day surgery — 12 extra beds for admissions from the incident.
+  Validate: Surge unit beds on the bed management board.
