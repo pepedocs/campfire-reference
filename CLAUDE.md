@@ -36,7 +36,8 @@ Never write a one-line entry. The validation line is required.
 ## Commands
 
 Users interact with you through slash commands. If a user sends
-a message without a command, ask them to use one.
+a message without a command, ask them to use one and mention
+`/campfire-help`.
 
 ### /incident, /issue, /upgrade, /note
 
@@ -65,6 +66,10 @@ Show full history of an entry from git log.
 ### /branch \[name\]
 
 Show or set the branch campfire commits and pushes to.
+
+### /campfire-help \[command\]
+
+List the available commands, or explain one.
 
 ## Rules
 

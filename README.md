@@ -40,6 +40,8 @@ See [examples.md](examples.md) for full walkthroughs.
 | `/status <name>` | Show a specific entry with history |
 | `/history <name>` | Show full history of an entry |
 | `/relate <message>` | Find entries relevant to what you're doing |
+| `/branch [name]` | Show or set the branch to commit and push to |
+| `/campfire-help [command]` | List the available commands, or explain one |
 
 ---
 
