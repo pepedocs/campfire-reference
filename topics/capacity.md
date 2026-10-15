@@ -11,3 +11,5 @@ Entry name: Capacity
   Validate: Waiting count and longest wait on the ED tracking board.
 - **Capacity 5** (Marcus Lee): ED on diversion for non-critical ambulances during code orange.
   Validate: Diversion status on the regional ambulance portal.
+- **Capacity 6** (Tom Becker): Today's elective OR list is suspended. ORs 1–4 are held for the mass-casualty incident (see Alert 3).
+  Validate: OR schedule board.
