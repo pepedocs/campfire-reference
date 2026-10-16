@@ -50,24 +50,35 @@ See [examples.md](examples.md) for full walkthroughs.
 ### The problem
 
 Teams communicate through conversations, handovers, and tribal knowledge.
-This works when the team is small and colocated. It breaks down when the
-team is distributed and asynchronous:
+Many people produce information, and many people consume it. Consumers
+don't want every raw report. They want a coherent view of the current
+state: what's broken, what's known, what's changing.
+
+Someone has to build that view. When a team is small and colocated, a
+coordinator usually does it — a lead or on-call person who hears
+everything and keeps the picture straight. The problem appears when
+there is no coordinator. Reports pile up in scattered places, and each
+consumer is left to piece the view together alone:
 
 - **No acknowledgement** — information may not reach everyone.
 - **No freshness guarantee** — information goes stale without anyone noticing.
 - **No durability** — information is lost when people leave or forget.
 
-Knowledge consistency is not guaranteed.
+Without a coordinator, knowledge consistency is not guaranteed.
+Distributed, asynchronous teams usually can't keep one.
 
-### Two sub-problems
+### Collection works, consolidation doesn't
 
-1. **Information collection** — people report what they know. This already
-   happens through normal work.
+Sharing knowledge takes two steps:
+
+1. **Information collection** — people report what they know. This is
+   not the problem. It already happens through normal work.
 2. **Information consolidation** — someone must continuously turn those
-   reports into a coherent current view.
+   reports into a coherent current view. This is the coordinator's job,
+   and without a coordinator nobody does it.
 
-We can't have a dedicated coordinator. The second problem is what
-campfire solves.
+We can't have a dedicated coordinator. Consolidation is what campfire
+solves.
 
 ### The approach
 
