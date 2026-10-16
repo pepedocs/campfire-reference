@@ -13,8 +13,8 @@ Entry name: Case
   Validate: CT head report and OR 2 on the OR schedule board.
 - **Case 6** (Priya Raman, Sam Okafor): Bay 3, chest trauma. Chest drain working, lung re-expanded. Admitted to ICU.
   Validate: Chest X-ray report and ICU bed assignment.
-- **Case 7** (Priya Raman): Bay 5, ESI 2, bus rollover. Open tibia fracture, antibiotics given.
-  Validate: Bay 5 orders on the tracking board.
+- **Case 7** (Priya Raman, Sam Okafor): Bay 5, open tibia fracture. Washout and external fixation booked in OR 3 at 12:00.
+  Validate: OR 3 on the OR schedule board.
 - **Case 8** (Elena Ortiz, Sam Okafor): Bay 6, unstable pelvic fracture. Taken to OR 1 for pelvic packing. Massive transfusion protocol running (see Alert 4).
   Validate: OR 1 on the OR schedule board and the blood bank MTP log.
 - **Case 9** (Priya Raman): Hallway 2, ESI 3, bus rollover. Multiple lacerations, stable.
