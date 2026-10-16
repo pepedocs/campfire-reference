@@ -17,3 +17,5 @@ Entry name: Case
   Validate: Bay 5 orders on the tracking board.
 - **Case 8** (Elena Ortiz): Bay 6, ESI 2, bus rollover. Pelvic fracture, blood pressure dropping despite fluids.
   Validate: Bay 6 vitals on the tracking board.
+- **Case 9** (Priya Raman): Hallway 2, ESI 3, bus rollover. Multiple lacerations, stable.
+  Validate: Hallway 2 on the tracking board.
