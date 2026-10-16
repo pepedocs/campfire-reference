@@ -9,3 +9,5 @@ Entry name: Alert
   Validate: Current pharmacy shortage bulletin.
 - **Alert 3** (Elena Ortiz): Mass-casualty incident — bus rollover on the highway. Up to 20 patients inbound, first arrivals in about 25 minutes. Code orange activated.
   Validate: Code orange status on the hospital emergency page, and the ambulance arrivals board.
+- **Alert 4** (Tom Becker): O-negative blood down to 6 units after the massive transfusion for Case 8. Resupply from the regional blood service due about 13:00. Use type-specific blood as soon as the group is known.
+  Validate: O-negative count on the blood bank stock board.
