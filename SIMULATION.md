@@ -1,6 +1,7 @@
 # Simulation: emergency department
 
-A fictional ER team using campfire from Thu 8 Oct to Fri 16 Oct 2026.
+A fictional ER team using campfire from Thu 8 Oct to Fri 16 Oct 2026
+(about 75 commits).
 Every person, case and event is made up. Each commit is authored by the
 staff member who made the change, at the time they made it.
 
@@ -41,6 +42,15 @@ staff member who made the change, at the time they made it.
 - **Fri 16 Oct handover:** Marcus runs `/status equipment` (no cache,
   so it's built) and `/status cases` (cache from 9 Oct, refreshed from
   the commits since).
+- **Fri day shift — code orange:** a bus rollover sends 17 patients in.
+  The ED goes on diversion (Capacity 5), electives are suspended
+  (Capacity 6), a surge unit opens (Capacity 7), and triage reports
+  Cases 5–11 within half an hour. Priya and Elena report at the same
+  minute again (Cases 7 and 8). The massive transfusion for Case 8
+  drains O-negative blood (Alert 4). A portable X-ray fails
+  (Equipment 2). Code orange stands down at 14:00, and Marcus books a
+  debrief (Note 1). Status caches are refreshed mid-incident and at
+  the end of the shift.
 
 ## Things to check
 
@@ -60,12 +70,17 @@ git blame --date=short topics/capacity.md topics/equipment.md
 
 In Claude, from this branch:
 
-- `/status capacity`: the cache is from Fri 9 Oct with 4 changes since,
-  so it should offer a fresh status. Capacity 3 should show as
-  "⚠️ stale".
-- `/status equipment`: Equipment 1 should show as "⏳ almost stale",
-  and its "part due ~15 Oct" has already passed.
-- `/relate CT for a head injury in Bay 6`: should find Equipment 1.
+- `/status cases`: the cache is from 12:30 with 3 changes since, so it
+  should show the cache and offer a fresh status.
+- `/status capacity`: the cache is current (0 changes since), so it
+  should say so and not ask.
+- `/status notes`: there's no cache yet, so it should build one from
+  the topic file.
+- `/status alerts`: Alert 2 (sugammadex, reported 14 Oct) should be
+  close to "⏳ almost stale" depending on the day you run it.
+- `/relate CT for a head injury`: should find Equipment 1 and Case 5.
+- `/update Case 8 packing removed, pelvis fixed`: should find Case 8,
+  add your name, commit with a `[campfire]` label, and ask to push.
 
 ## Gaps this surfaced
 
