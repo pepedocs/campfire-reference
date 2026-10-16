@@ -142,10 +142,12 @@ changes to campfire itself mixed in.
 
 ### What validation means
 
-Every entry has a "Validate:" line — a short instruction for how
-someone can check whether the information is still true. The agent
-does not perform the validation. It surfaces the method so anyone
-can verify when needed.
+Validation is self-service. Every piece of information comes with a
+"Validate:" line — a short instruction for how anyone can check it
+themselves. The agent asks for one on every report, update and
+resolution, even if the answer is short, and shows it wherever the
+entry appears. The agent does not perform the validation. It surfaces
+the method so anyone can verify when needed.
 
 ### What the agent does not do
 

@@ -31,7 +31,16 @@ indented validation line:
 
 - The reporter is `git config user.name`. Don't ask who the user is.
   When someone else updates an entry, add their name to the list.
+- **Every piece of information needs its own validation, even a
+  short one.** Validation is self-service: it tells anyone how to
+  check the information themselves. `/report`, `/update` and
+  `/resolve` always ask "how would someone verify this?" and don't
+  write until answered. The answer replaces the entry's validation
+  line, so it always matches the current description. Earlier
+  validations stay in git history.
 - Never write an entry without a validation line.
+- Whenever entries are shown, show their validation too — always for
+  stale or almost-stale entries, so the owner knows how to re-check.
 - Numbers are never reused, even after an entry is removed.
 - Only remove entries that were resolved a few days ago, never on the
   day they're resolved and never if unresolved. Commit with a message

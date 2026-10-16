@@ -24,6 +24,6 @@ Reply with this help text exactly. Don't read any files except for the topic lis
 
 Then list the topics from `grep -H '^Purpose:' topics/*.md`, one line each.
 
-If $ARGUMENTS names a command, show only its row, plus what it asks before writing (the validation method for `/report`, the purpose for `/topic add`, push confirmation for anything that commits).
+If $ARGUMENTS names a command, show only its row, plus what it asks before writing (the validation method for `/report`, `/update` and `/resolve`, the purpose for `/topic add`, push confirmation for anything that commits).
 
 User input: $ARGUMENTS
