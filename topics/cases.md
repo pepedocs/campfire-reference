@@ -11,8 +11,8 @@ Entry name: Case
   Validate: OR 3 on the OR schedule board.
 - **Case 5** (Priya Raman, Hana Kim, Elena Ortiz): Bay 1, head injury. CT shows an acute subdural hematoma. Neurosurgery taking him to OR 2.
   Validate: CT head report and OR 2 on the OR schedule board.
-- **Case 6** (Priya Raman): Bay 3, ESI 1, bus rollover. Chest trauma — tension pneumothorax decompressed, chest drain going in.
-  Validate: Bay 3 on the tracking board and the procedure note.
+- **Case 6** (Priya Raman, Sam Okafor): Bay 3, chest trauma. Chest drain working, lung re-expanded. Admitted to ICU.
+  Validate: Chest X-ray report and ICU bed assignment.
 - **Case 7** (Priya Raman): Bay 5, ESI 2, bus rollover. Open tibia fracture, antibiotics given.
   Validate: Bay 5 orders on the tracking board.
 - **Case 8** (Elena Ortiz, Sam Okafor): Bay 6, unstable pelvic fracture. Taken to OR 1 for pelvic packing. Massive transfusion protocol running (see Alert 4).
