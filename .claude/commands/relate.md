@@ -7,7 +7,7 @@ Return entries related to what the user describes. The input starts with a topic
 For each topic searched:
 
 1. **Use the cache to find candidates.** If `status/<topic>.md` exists, read it — one line per entry. Also read any changes since it: `git log -p -U0 --format=%h <cache commit>..HEAD -- topics/<topic>.md`. If there's no cache, read the topic file instead.
-2. **Read only the matches in full.** For each candidate, `grep -n -A1 '^- \*\*<Entry> <n>\*\*' topics/<topic>.md` to get its description and validation lines.
+2. **Read only the matches in full.** For each candidate, `grep -n -A1 '^- \*\*<Entry>-<n>\*\*' topics/<topic>.md` to get its description and validation lines.
 3. **Follow references** only for entries named in the matches, the same way.
 
 Reply with the matching entries (both lines, with staleness markers: 5+ days since the last update is "⏳ almost stale", 7+ days is "⚠️ stale"), then this line:

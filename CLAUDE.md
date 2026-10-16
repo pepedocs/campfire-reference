@@ -16,8 +16,9 @@ Purpose: Things that could delay or derail the launch.
 Entry name: Risk
 ```
 
-Entries are named `<Entry name> <number>` (`Risk 3`). To find the
+Entries are named `<Entry name>-<number>` (`Risk-3`). To find the
 topic for an entry name, run `grep -l '^Entry name: Risk$' topics/*.md`.
+In input, accept any case and a space or hyphen (`risk 3` → `Risk-3`).
 
 ## Entries
 
@@ -25,7 +26,7 @@ Every entry has exactly two lines — a description line and an
 indented validation line:
 
 ```markdown
-- **Risk 1** (Alice): The payment provider hasn't signed off on checkout.
+- **Risk-1** (Alice): The payment provider hasn't signed off on checkout.
   Validate: Check the sign-off thread with the payment provider.
 ```
 
@@ -87,7 +88,7 @@ Commit automatically — don't ask. Every commit message starts with a
 label:
 
 - `[campfire]` — knowledge changes (report, update, resolve, remove,
-  add topic): `[campfire] report Risk 3: app store review may slip`
+  add topic): `[campfire] report Risk-3: app store review may slip`
 - `[campfire-status]` — status cache commits:
   `[campfire-status] update status for risks`
 
