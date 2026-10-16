@@ -13,3 +13,5 @@ Entry name: Case
   Validate: Bay 1 on the tracking board and the CT 1 queue.
 - **Case 6** (Priya Raman): Bay 3, ESI 1, bus rollover. Chest trauma — tension pneumothorax decompressed, chest drain going in.
   Validate: Bay 3 on the tracking board and the procedure note.
+- **Case 7** (Priya Raman): Bay 5, ESI 2, bus rollover. Open tibia fracture, antibiotics given.
+  Validate: Bay 5 orders on the tracking board.
