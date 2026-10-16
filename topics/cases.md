@@ -15,8 +15,8 @@ Entry name: Case
   Validate: Chest X-ray report and ICU bed assignment.
 - **Case 7** (Priya Raman, Sam Okafor): Bay 5, open tibia fracture. Washout and external fixation booked in OR 3 at 12:00.
   Validate: OR 3 on the OR schedule board.
-- **Case 8** (Elena Ortiz, Sam Okafor): Bay 6, unstable pelvic fracture. Taken to OR 1 for pelvic packing. Massive transfusion protocol running (see Alert 4).
-  Validate: OR 1 on the OR schedule board and the blood bank MTP log.
+- **Case 8** (Elena Ortiz, Sam Okafor): Bay 6 pelvic fracture. Packed and stabilized, now in ICU. Back to OR tomorrow to remove packing and fix the pelvis.
+  Validate: ICU bed assignment and tomorrow's OR schedule.
 - **Case 9** (Priya Raman, Elena Ortiz): Resolved. Hallway 2 lacerations closed. Discharged.
   Validate: Discharge note in the EHR.
 - **Case 10** (Priya Raman, Elena Ortiz): Bay 8, child with seatbelt mark. Repeat exam normal. Observing for 6 hours on the pediatric ward.
