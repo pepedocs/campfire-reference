@@ -25,8 +25,8 @@ claude
 ```
 /topic add risks Things that could delay or derail the launch
 /report risk The payment provider hasn't signed off on checkout
-/update Risk 1 review scheduled for the 5th
-/resolve Risk 1 provider signed off
+/update Risk-1 review scheduled for the 5th
+/resolve Risk-1 provider signed off
 /status risks
 /relate risks I'm about to change the checkout page copy
 ```
