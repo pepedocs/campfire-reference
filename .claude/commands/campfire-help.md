@@ -1,18 +1,29 @@
-List the available campfire commands. Don't read or change any entries, and don't run git.
+---
+description: List the campfire commands
+argument-hint: "[command]"
+model: haiku
+---
+Reply with this help text exactly. Don't read any files except for the topic list at the end.
 
-Build the list from the files in `.claude/commands/`. Each file is one command, named after the file (`report.md` is `/report`). Read each file to work out its arguments and what it does, so the list stays accurate when commands are added or changed.
+| Command | Purpose |
+|---|---|
+| **Report** | |
+| `/report <topic> <description>` | Add a new entry to a topic |
+| `/topic [list]` | List topics with open and resolved counts |
+| `/topic add <name> <purpose>` | Add a topic |
+| **Change** | |
+| `/update <entry> <update>` | Update an entry in place |
+| `/resolve <entry> <resolution>` | Mark an entry as resolved |
+| **Look up** | |
+| `/status <topic>` | Show a topic's status, cached or fresh |
+| `/history <entry> [full]` | Who changed an entry and when; "full" adds the changes |
+| `/relate <topic\|all> <what you're doing>` | Find related entries in a topic |
+| **Setup** | |
+| `/branch [name]` | Show or set the branch to commit and push to |
+| `/campfire-help [command]` | This help |
 
-Reply with a table of every command, its usage, and a one-line purpose, grouped as:
+Then list the topics from `grep -H '^Purpose:' topics/*.md`, one line each.
 
-- **Report**: `/report`, `/topic`
-- **Change**: `/update`, `/resolve`
-- **Look up**: `/status`, `/history`, `/relate`
-- **Setup**: `/branch`, `/campfire-help`
-
-Put any command that isn't in these groups under **Other**.
-
-After the table, list the topics this campfire has: the title and purpose from each file under `topics/`.
-
-If $ARGUMENTS names a command, show only that command: its usage, what it does, and what it will ask you for before writing (validation method, push confirmation).
+If $ARGUMENTS names a command, show only its row, plus what it asks before writing (the validation method for `/report`, the purpose for `/topic add`, push confirmation for anything that commits).
 
 User input: $ARGUMENTS

@@ -129,9 +129,10 @@ mentions that Decision 1 refers to this risk:
 
 ### Finding related entries
 
-> `/relate I'm about to change the checkout page copy`
+> `/relate risks I'm about to change the checkout page copy`
 
-Agent searches all topics and returns:
+Agent searches the risks topic — its status cache first, then the
+full text of matching entries only — and returns:
 
 > - **Risk 1** (Alice, Charlie): Resolved. The payment provider signed off on the new checkout flow after a fix to the receipt email.
 >   Validate: Check the sign-off thread with the payment provider — sign-off is on the 7th.
@@ -185,7 +186,8 @@ current and doesn't ask.
 
 > `/history Risk 1`
 
-Agent shows the complete git log with diffs for that entry.
+Agent shows one line per change: who, when, and the commit message.
+`/history Risk 1 full` also shows the changed lines.
 
 ---
 

@@ -28,7 +28,7 @@ claude
 /update Risk 1 review scheduled for the 5th
 /resolve Risk 1 provider signed off
 /status risks
-/relate I'm about to change the checkout page copy
+/relate risks I'm about to change the checkout page copy
 ```
 
 See [examples.md](examples.md) for full walkthroughs.
@@ -38,13 +38,13 @@ See [examples.md](examples.md) for full walkthroughs.
 | Command | Purpose |
 |---------|---------|
 | `/report <topic> <description>` | Report something new in a topic |
-| `/topic` | List topics |
+| `/topic [list]` | List topics |
 | `/topic add <name> <purpose>` | Add a topic |
 | `/update <name> <description>` | Update an existing entry |
 | `/resolve <name> <description>` | Mark an entry as resolved |
 | `/status <topic>` | Show a topic's status, cached or fresh |
-| `/history <name>` | Show full history of an entry |
-| `/relate <message>` | Find entries relevant to what you're doing |
+| `/history <name> [full]` | Who changed an entry and when; `full` adds the changes |
+| `/relate <topic\|all> <message>` | Find related entries in a topic (or all topics) |
 | `/branch [name]` | Show or set the branch to commit and push to |
 | `/campfire-help [command]` | List the available commands, or explain one |
 
@@ -135,6 +135,7 @@ changes to campfire itself mixed in.
 - Writes entries on behalf of users.
 - Reads files and git history to answer questions.
 - Finds entries relevant to what you're working on (`/relate`).
+- Keeps token use low — see [optimizations.md](optimizations.md).
 - Flags stale entries (older than 7 days).
 - Requires validation methods so entries can be re-verified.
 - Commits automatically, asks before pushing to the target branch (set with `/branch`).

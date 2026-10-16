@@ -1,11 +1,21 @@
-Report something new in a topic. Follow the "Adding" rules in CLAUDE.md.
+---
+description: Report something new in a topic
+argument-hint: <topic> <description>
+model: haiku
+---
+Report a new entry. Don't read the whole topic file.
 
-The input starts with the topic (e.g., "note", "risks"), followed by the description. Match it against the topics under `topics/`. If it doesn't match a topic, list the topics and suggest `/topic add`.
-
-Assign the next sequential number using the topic's entry name (Note 1, Note 2, etc.). Include the reporter's name from `git config user.name`.
-
-Before writing, ask for a validation method: "how would someone verify this?" Do not write until the user provides one.
-
-Write a two-line entry (description + validation). Commit automatically. Then ask: "push to <branch>?"
+1. **Find the topic.** Run `grep -H '^Entry name:' topics/*.md`. Match the first word of the input against each file name and entry name, ignoring case and plurals (`risk`, `risks` → `topics/risks.md`). No match: reply with one line listing the topics and suggesting `/topic add`. Don't create topics.
+2. **Next number.** Highest number seen in the file or in past report commits, plus one, so removed numbers are never reused:
+   `{ grep -o '^- \*\*<Entry> [0-9]*' topics/<topic>.md; git log --format=%s | grep -o '^\[campfire\] report <Entry> [0-9]*'; } | grep -o '[0-9]*$' | sort -n | tail -1`
+3. **Validation.** Ask: "how would someone verify this?" Don't write until answered.
+4. **Append** without reading the file:
+   ```
+   cat >> topics/<topic>.md <<'EOF'
+   - **<Entry> <n>** (<git user.name>): <description>
+     Validate: <validation>
+   EOF
+   ```
+5. Commit: `[campfire] report <Entry> <n>: <short summary>`. Show only the new entry, then ask: "push to <branch>?"
 
 User input: $ARGUMENTS

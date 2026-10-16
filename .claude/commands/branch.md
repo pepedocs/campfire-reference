@@ -1,3 +1,8 @@
+---
+description: Show or set the branch campfire commits and pushes to
+argument-hint: "[name]"
+model: haiku
+---
 Show or set the branch that campfire commits and pushes to. The setting is stored in this clone's git config (`campfire.branch`), not in a committed file, so it doesn't change anyone else's target.
 
 If $ARGUMENTS is empty: run `git config --get campfire.branch` and report the target branch. If it's unset, say so and report the branch currently checked out, which is what campfire uses by default.
