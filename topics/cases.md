@@ -9,8 +9,8 @@ Entry name: Case
   Validate: Bed assignment on the bed board.
 - **Case 4** (Priya Raman, Hana Kim): Resolved. Bay 2 hip fracture fixed in OR 3. Moved to the orthopedic ward.
   Validate: Op note and bed assignment on the bed board.
-- **Case 5** (Priya Raman, Hana Kim, Elena Ortiz): Bay 1, head injury. CT shows an acute subdural hematoma. Neurosurgery taking him to OR 2.
-  Validate: CT head report and OR 2 on the OR schedule board.
+- **Case 5** (Priya Raman, Hana Kim, Elena Ortiz): Bay 1 head injury. Hematoma evacuated in OR 2. Sedated in ICU, neurosurgery following.
+  Validate: Neurosurgery op note and ICU bed assignment.
 - **Case 6** (Priya Raman, Sam Okafor): Bay 3, chest trauma. Chest drain working, lung re-expanded. Admitted to ICU.
   Validate: Chest X-ray report and ICU bed assignment.
 - **Case 7** (Priya Raman, Sam Okafor): Bay 5, open tibia fracture. Washout and external fixation booked in OR 3 at 12:00.
