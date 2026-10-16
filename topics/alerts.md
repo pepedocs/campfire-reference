@@ -7,7 +7,7 @@ Entry name: Alert
   Validate: Exposure list in the infection control folder on the shared drive.
 - **Alert 2** (Hana Kim): Sugammadex shortage. Pharmacy is reserving it for failed neostigmine reversal and emergencies. Plan reversal with neostigmine first.
   Validate: Current pharmacy shortage bulletin.
-- **Alert 3** (Elena Ortiz): Mass-casualty incident — bus rollover on the highway. Up to 20 patients inbound, first arrivals in about 25 minutes. Code orange activated.
-  Validate: Code orange status on the hospital emergency page, and the ambulance arrivals board.
+- **Alert 3** (Elena Ortiz): Code orange still active. All 17 patients from the bus rollover have arrived. No more inbound.
+  Validate: Ambulance arrivals board and the code orange status page.
 - **Alert 4** (Tom Becker): Resupply arrived. O-negative back to 18 units.
   Validate: O-negative count on the blood bank stock board.
