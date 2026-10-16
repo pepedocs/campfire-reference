@@ -21,5 +21,5 @@ Entry name: Case
   Validate: Discharge note in the EHR.
 - **Case 10** (Priya Raman, Elena Ortiz): Bay 8, child with seatbelt mark. Repeat exam normal. Observing for 6 hours on the pediatric ward.
   Validate: Pediatric ward observation chart.
-- **Case 11** (Priya Raman): Bay 10, ESI 3, bus rollover. Wrist fracture, neurovascularly intact.
-  Validate: Bay 10 X-ray report.
+- **Case 11** (Priya Raman, Elena Ortiz): Resolved. Bay 10 wrist fracture splinted. Discharged with fracture clinic follow-up.
+  Validate: Discharge note and fracture clinic referral in the EHR.
