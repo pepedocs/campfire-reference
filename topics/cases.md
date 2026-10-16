@@ -19,3 +19,5 @@ Entry name: Case
   Validate: Bay 6 vitals on the tracking board.
 - **Case 9** (Priya Raman): Hallway 2, ESI 3, bus rollover. Multiple lacerations, stable.
   Validate: Hallway 2 on the tracking board.
+- **Case 10** (Priya Raman): Bay 8, ESI 2, bus rollover. Child, 9 years old, abdominal pain with a seatbelt mark. Ultrasound negative, needs observation.
+  Validate: Bay 8 on the tracking board and the ultrasound result.
