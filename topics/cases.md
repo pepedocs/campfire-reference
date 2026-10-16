@@ -15,3 +15,5 @@ Entry name: Case
   Validate: Bay 3 on the tracking board and the procedure note.
 - **Case 7** (Priya Raman): Bay 5, ESI 2, bus rollover. Open tibia fracture, antibiotics given.
   Validate: Bay 5 orders on the tracking board.
+- **Case 8** (Elena Ortiz): Bay 6, ESI 2, bus rollover. Pelvic fracture, blood pressure dropping despite fluids.
+  Validate: Bay 6 vitals on the tracking board.
