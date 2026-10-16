@@ -19,7 +19,7 @@ Entry name: Case
   Validate: OR 1 on the OR schedule board and the blood bank MTP log.
 - **Case 9** (Priya Raman, Elena Ortiz): Resolved. Hallway 2 lacerations closed. Discharged.
   Validate: Discharge note in the EHR.
-- **Case 10** (Priya Raman): Bay 8, ESI 2, bus rollover. Child, 9 years old, abdominal pain with a seatbelt mark. Ultrasound negative, needs observation.
-  Validate: Bay 8 on the tracking board and the ultrasound result.
+- **Case 10** (Priya Raman, Elena Ortiz): Bay 8, child with seatbelt mark. Repeat exam normal. Observing for 6 hours on the pediatric ward.
+  Validate: Pediatric ward observation chart.
 - **Case 11** (Priya Raman): Bay 10, ESI 3, bus rollover. Wrist fracture, neurovascularly intact.
   Validate: Bay 10 X-ray report.
