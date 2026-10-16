@@ -1,61 +1,91 @@
 # Examples
 
-These examples assume Alice, Bob, Charlie, and Diana are team members
-working across multiple OpenShift clusters.
+These examples assume Alice, Bob, Charlie, and Diana are on a team
+preparing a product launch. Campfire doesn't assume any kind of team —
+the topics below are the ones this team chose.
+
+---
+
+## Setting up topics
+
+A new campfire has one topic, `notes`. The team adds the topics it
+needs.
+
+### Listing topics
+
+> `/topic`
+
+> **Notes** (`topics/notes.md`) — Anything the team should know that doesn't fit another topic. 0 entries.
+
+### Adding a topic
+
+> `/topic add risks Things that could delay or derail the launch`
+
+Agent creates `topics/risks.md`, commits, then asks: *push to main?*
+
+```markdown
+# Risks
+
+Purpose: Things that could delay or derail the launch.
+Entry name: Risk
+```
+
+> `/topic add decisions Choices the team has made, and why`
+
+```markdown
+# Decisions
+
+Purpose: Choices the team has made, and why.
+Entry name: Decision
+```
 
 ---
 
 ## Reporting
 
-### New incident
+### New risk
 
-> `/incident CrashLoopBackOff on payment-api pods in prod-east/payments`
+> `/report risk The payment provider hasn't signed off on the new checkout flow`
 
 Agent: *How would someone verify this?*
 
-> `oc get pods -n payments -l app=payment-api`
+> `check the sign-off thread with the payment provider`
 
-Agent writes to `incidents.md`, commits, then asks: *push?*
+Agent writes to `topics/risks.md`, commits, then asks: *push to main?*
 
 ```markdown
-- **Incident 1** (Alice): CrashLoopBackOff on payment-api pods in prod-east/payments.
-  Validate: `oc get pods -n payments -l app=payment-api`
+- **Risk 1** (Alice): The payment provider hasn't signed off on the new checkout flow.
+  Validate: Check the sign-off thread with the payment provider.
 ```
 
-### New issue
+### New decision
 
-> `/issue etcd disk latency above 100ms on prod-west control plane`
-
-Agent: *How would someone verify this?*
-
-> `check grafana etcd dashboard for prod-west`
-
-```markdown
-- **Issue 1** (Bob): etcd disk latency above 100ms on prod-west control plane.
-  Validate: check grafana etcd dashboard for prod-west.
-```
-
-### New upgrade
-
-> `/upgrade OCP 4.14 to 4.15 planned for prod-east next Tuesday`
+> `/report decision Launch moves from the 3rd to the 10th to leave time for the provider review`
 
 Agent: *How would someone verify this?*
 
-> `oc get clusterversion on prod-east`
+> `the launch date on the project plan`
 
 ```markdown
-- **Upgrade 1** (Diana): OCP 4.14 → 4.15 planned for prod-east next Tuesday.
-  Validate: `oc get clusterversion` on prod-east.
+- **Decision 1** (Bob): Launch moves from the 3rd to the 10th to leave time for the provider review. Related: Risk 1.
+  Validate: Check the launch date on the project plan.
 ```
 
 ### New note
 
-> `/note AWS us-east-1 reporting degraded EBS performance, may affect prod-east PVs`
+> `/report note Diana is out from the 6th to the 8th; Charlie covers support questions`
 
 ```markdown
-- **Note 1** (Charlie): AWS us-east-1 reporting degraded EBS performance, may affect prod-east PVs.
-  Validate: check AWS status page for us-east-1 EBS.
+- **Note 1** (Diana): Out from the 6th to the 8th. Charlie covers support questions.
+  Validate: Check the team calendar.
 ```
+
+### A topic that doesn't exist
+
+> `/report bug The signup page is slow on mobile`
+
+Agent: *There's no "bug" topic. Topics are: Notes, Risks, Decisions.
+Report it under one of those, or add a topic with `/topic add`.*
 
 ---
 
@@ -63,33 +93,34 @@ Agent: *How would someone verify this?*
 
 ### Updating an entry
 
-> `/update Incident 1 mitigated, scaled replicas to 8, error rate dropping`
+> `/update Risk 1 provider replied, review scheduled for the 5th`
 
-Agent edits the existing line in `incidents.md`:
+Agent edits the existing line in `topics/risks.md`:
 
 ```markdown
-- **Incident 1** (Alice): CrashLoopBackOff on payment-api pods in prod-east/payments. Mitigated — scaled replicas to 8, error rate dropping.
-  Validate: `oc get pods -n payments -l app=payment-api`
+- **Risk 1** (Alice): The payment provider hasn't signed off on the new checkout flow. Review scheduled for the 5th.
+  Validate: Check the sign-off thread with the payment provider.
 ```
 
 ### A different person updates
 
-> `/update Incident 1 root cause identified — OOM, need to bump memory limits`
+> `/update Risk 1 review done, they asked for one change to the receipt email`
 
-Agent adds Charlie's name since he's not the original reporter:
+Agent adds Charlie's name since he's not the original reporter, and
+mentions that Decision 1 refers to this risk:
 
 ```markdown
-- **Incident 1** (Alice, Charlie): CrashLoopBackOff on payment-api pods in prod-east/payments. Root cause identified — OOM, need to bump memory limits.
-  Validate: `oc get pods -n payments -l app=payment-api`
+- **Risk 1** (Alice, Charlie): The payment provider hasn't signed off on the new checkout flow. Review done — one change requested to the receipt email.
+  Validate: Check the sign-off thread with the payment provider.
 ```
 
 ### Resolving an entry
 
-> `/resolve Incident 1 pods healthy, bumped memory limits to 2Gi`
+> `/resolve Risk 1 receipt email fixed, provider signed off`
 
 ```markdown
-- **Incident 1** (Alice, Charlie): Resolved. CrashLoopBackOff on payment-api pods in prod-east/payments. Root cause was OOM, bumped memory limits to 2Gi.
-  Validate: `oc get pods -n payments -l app=payment-api` — zero restarts in 24h.
+- **Risk 1** (Alice, Charlie): Resolved. The payment provider signed off on the new checkout flow after a fix to the receipt email.
+  Validate: Check the sign-off thread with the payment provider — sign-off is on the 7th.
 ```
 
 ---
@@ -98,51 +129,61 @@ Agent adds Charlie's name since he's not the original reporter:
 
 ### Finding related entries
 
-> `/relate I'm going to install a cluster to test UDR`
+> `/relate I'm about to change the checkout page copy`
 
-Agent searches all files and returns:
+Agent searches all topics and returns:
 
-> - **Issue 1** (Jose): Kubernetes v10.1 bug is causing a UDR incident in OpenShift.
->   Validate: Confirm OCP is using Kubernetes > v10.2.
+> - **Risk 1** (Alice, Charlie): Resolved. The payment provider signed off on the new checkout flow after a fix to the receipt email.
+>   Validate: Check the sign-off thread with the payment provider — sign-off is on the 7th.
 >
 > ⚠️ *These entries reflect what the team has reported. They may be incomplete, stale, or inaccurate. Verify before acting.*
 
-### Checking status
+### Checking status for the first time
 
-> `/status`
+> `/status risks`
 
-Agent reads all files and summarizes:
+There's no cache yet, so the agent reads `topics/risks.md` once,
+writes `status/risks.md`, commits it, and shows it:
 
-> **Incidents** (1 entry)
-> - **Incident 1** (Alice, Charlie): Resolved. Payment-api OOM in prod-east.
+> **Risks status** — Open: 1 · Resolved: 1
+> - **Risk 2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. ⏳ *5 days since last update.*
+> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout.
+
+Agent: *push to main?*
+
+### Checking status again
+
+> `/status risks`
+
+The agent shows the cache without reading the topic file:
+
+> **Risks status** — Open: 1 · Resolved: 1
+> - **Risk 2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. ⚠️ *7 days since last update.*
+> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout.
 >
-> **Issues** (1 entry)
-> - **Issue 1** (Bob): etcd disk latency on prod-west. ⚠️ *9 days since last update.*
->
-> **Upgrades** (1 entry)
-> - **Upgrade 1** (Diana): OCP 4.14 → 4.15 for prod-east next Tuesday.
->
-> **Notes** (1 entry)
-> - **Note 1** (Charlie): AWS us-east-1 degraded EBS performance.
+> Cached 2026-08-14 09:12 · 2 changes since.
 
-### Checking a specific entry
+Agent: *Use this, or get a fresh status?*
 
-> `/status Incident 1`
+> `fresh`
 
-Agent shows the entry and its git history:
+The agent reads only the 2 commits to `topics/risks.md` since the
+cache, applies them, commits the updated `status/risks.md`, and shows
+it:
 
-> **Incident 1** (Alice, Charlie): Resolved. CrashLoopBackOff on payment-api pods in prod-east/payments.
-> Validate: `oc get pods -n payments -l app=payment-api` — zero restarts in 24h.
->
-> **History:**
-> - Charlie (2026-08-24): resolve Incident 1: pods healthy, root cause was OOM
-> - Charlie (2026-08-23): update Incident 1: root cause identified, OOM
-> - Alice (2026-08-23): update Incident 1: mitigated, scaled replicas to 8
-> - Alice (2026-08-22): report Incident 1: CrashLoopBackOff on payment-api pods
+> **Risks status** — Open: 2 · Resolved: 1
+> - **Risk 3** (Diana) · updated 2026-08-16: The app store review may take longer than a week.
+> - **Risk 2** (Bob, Charlie) · updated 2026-08-15: Launch-day traffic may exceed the current plan's limits. Upgrade requested.
+> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout.
+
+Agent: *push to main?*
+
+If nothing changed since the cache, the agent says the cache is
+current and doesn't ask.
 
 ### Viewing full history
 
-> `/history Incident 1`
+> `/history Risk 1`
 
 Agent shows the complete git log with diffs for that entry.
 
@@ -155,13 +196,13 @@ Every action above produces a commit. The full trail is always available:
 ```
 $ git log --oneline
 
-a1b2c3d Charlie: resolve Incident 1: pods healthy, root cause was OOM
-d4e5f6g Charlie: update Incident 1: root cause identified, OOM
-h7i8j9k Alice: update Incident 1: mitigated, scaled replicas to 8
-l0m1n2o Alice: report Incident 1: CrashLoopBackOff on payment-api pods
-p3q4r5s Diana: report Upgrade 1: OCP 4.14 to 4.15 for prod-east
-t6u7v8w Bob: report Issue 1: etcd disk latency on prod-west
-x9y0z1a Charlie: report Note 1: AWS us-east-1 degraded EBS
+a1b2c3d Charlie: resolve Risk 1: receipt email fixed, provider signed off
+d4e5f6g Charlie: update Risk 1: review done, one change requested
+h7i8j9k Alice: update Risk 1: review scheduled for the 5th
+l0m1n2o Diana: report Note 1: out from the 6th to the 8th
+p3q4r5s Bob: report Decision 1: launch moves to the 10th
+t6u7v8w Alice: report Risk 1: provider hasn't signed off on checkout
+x9y0z1a Alice: add topics: risks, decisions
 ```
 
 Who said what, when they said it, and exactly what changed — all auditable.

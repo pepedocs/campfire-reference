@@ -1,4 +1,4 @@
-The user is describing something they're doing or planning. Read all files (incidents.md, issues.md, upgrades.md, notes.md) and return any entries relevant to what they said.
+The user is describing something they're doing or planning. Read all topic files under `topics/` and return any entries relevant to what they said.
 
 Don't add your own commentary — just return the matching entries.
 
