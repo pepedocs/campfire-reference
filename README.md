@@ -94,8 +94,10 @@ User ←→ LLM agent ←→ Git repo
 The user talks to the agent through slash commands. The agent maintains
 one file per topic under `topics/` and commits every change to Git.
 
-`/status <topic>` caches its output in `status/<topic>.md` and commits
-it. The next time, the agent shows the cached status with its timestamp
+`/status <topic>` consolidates the topic's entries into one summary of
+what's true now, stores it in `status/<topic>.md`, and commits it. Each
+summary line names the entries it comes from, and the entries
+themselves are never changed. The next time, the agent shows the cached status with its timestamp
 and how many changes came after it, and asks whether that's good enough.
 A fresh status starts from the cache and applies only the commits since,
 so the topic file isn't re-read. Consumers can also open `status/`

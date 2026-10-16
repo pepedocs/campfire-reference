@@ -156,24 +156,32 @@ full text of matching entries only — and returns:
 
 > `/status risks`
 
-There's no cache yet, so the agent reads `topics/risks.md` once,
-writes `status/risks.md`, commits it, and shows it:
+There's no status yet, so the agent reads `topics/risks.md` once,
+consolidates it into `status/risks.md`, commits it, and shows it:
 
-> **Risks status** — Open: 1 · Resolved: 1
-> - **Risk-2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. · Validate: Hosting plan limits page. ⏳ *5 days since last update.*
-> - **Risk-1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout. · Validate: Sign-off thread with the provider.
+> **Risks** — Open: 1 · Resolved: 1
+> - **Launch date:** The provider signed off on checkout, so nothing blocks the 10th. *(Risk-1, Decision-1)* · Validate: sign-off thread, project plan.
+> - **Traffic:** Launch-day load may exceed the current plan's limits. *(Risk-2)* · Validate: hosting plan limits page. ⏳ *5 days since last update.*
 
 Agent: *push to main?*
+
+The stored file is terse, for the agent:
+
+```
+open:1 resolved:1
+Launch date: provider signed off on checkout → nothing blocks the 10th [Risk-1@2026-08-07, Decision-1@2026-08-03] v:sign-off thread, project plan
+Traffic: launch-day load may exceed plan limits [Risk-2@2026-08-09] v:hosting plan limits page
+```
 
 ### Checking status again
 
 > `/status risks`
 
-The agent shows the cache without reading the topic file:
+The agent shows the stored status without reading the topic file:
 
-> **Risks status** — Open: 1 · Resolved: 1
-> - **Risk-2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. · Validate: Hosting plan limits page. ⚠️ *7 days since last update.*
-> - **Risk-1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout. · Validate: Sign-off thread with the provider.
+> **Risks** — Open: 1 · Resolved: 1
+> - **Launch date:** The provider signed off on checkout, so nothing blocks the 10th. *(Risk-1, Decision-1)* · Validate: sign-off thread, project plan.
+> - **Traffic:** Launch-day load may exceed the current plan's limits. *(Risk-2)* · Validate: hosting plan limits page. ⚠️ *7 days since last update.*
 >
 > Cached 2026-08-14 09:12 · 2 changes since.
 
@@ -181,19 +189,18 @@ Agent: *Use this, or get a fresh status?*
 
 > `fresh`
 
-The agent reads only the 2 commits to `topics/risks.md` since the
-cache, applies them, commits the updated `status/risks.md`, and shows
-it:
+The agent reads only the 2 commits to `topics/risks.md` since then,
+folds them into the summary, commits it, and shows it:
 
-> **Risks status** — Open: 2 · Resolved: 1
-> - **Risk-3** (Diana) · updated 2026-08-16: The app store review may take longer than a week. · Validate: App store review status.
-> - **Risk-2** (Bob, Charlie) · updated 2026-08-15: Launch-day traffic may exceed the current plan's limits. Upgrade requested. · Validate: Hosting plan limits page.
-> - **Risk-1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout. · Validate: Sign-off thread with the provider.
+> **Risks** — Open: 2 · Resolved: 1
+> - **Launch date:** The provider signed off, but the app store review may take over a week, which could push past the 10th. *(Risk-1, Risk-3, Decision-1)* · Validate: app store review status, project plan.
+> - **Traffic:** Load may exceed plan limits; an upgrade was requested. *(Risk-2)* · Validate: hosting plan limits page.
+> - **Recheck:** the upgrade isn't confirmed yet. *(Risk-2)*
 
 Agent: *push to main?*
 
-If nothing changed since the cache, the agent says the cache is
-current and doesn't ask.
+If nothing changed since the status, the agent says it's current and
+doesn't ask.
 
 ### Viewing full history
 
