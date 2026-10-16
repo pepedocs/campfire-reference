@@ -70,17 +70,18 @@ git blame --date=short topics/capacity.md topics/equipment.md
 
 In Claude, from this branch:
 
-- `/status cases`: the cache is from 12:30 with 3 changes since, so it
-  should show the cache and offer a fresh status.
-- `/status capacity`: the cache is current (0 changes since), so it
-  should say so and not ask.
+- `/status cases`: the cache is current, so it should say so and not
+  ask. Then run `/update Case 8 packing removed, pelvis fixed` (it asks
+  for a validation, e.g. "op note"), and `/status cases` again: it
+  should show the cache with 1 change since and offer a fresh status.
 - `/status notes`: there's no cache yet, so it should build one from
   the topic file.
 - `/status alerts`: Alert 2 (sugammadex, reported 14 Oct) should be
-  close to "⏳ almost stale" depending on the day you run it.
-- `/relate CT for a head injury`: should find Equipment 1 and Case 5.
-- `/update Case 8 packing removed, pelvis fixed`: should find Case 8,
-  add your name, commit with a `[campfire]` label, and ask to push.
+  close to "⏳ almost stale" depending on the day you run it, and show
+  its validation.
+- `/resolve Case 10 observation done, discharged home`: should ask for a
+  validation before writing.
+- `/relate equipment CT for a head injury`: should find Equipment 1.
 
 ## Gaps this surfaced
 
@@ -95,3 +96,7 @@ In Claude, from this branch:
 3. **Sensitive data.** The `cases` purpose line keeps patient names
    out, but only by convention. Campfire has no general rule about
    what must never be written into a topic.
+
+Status caches were rebuilt on 16 Oct to include a validation for every
+entry. Each piece of information has its own validation — the entries
+in `topics/` always had one, and the caches now carry it too.
