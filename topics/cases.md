@@ -15,8 +15,8 @@ Entry name: Case
   Validate: Bay 3 on the tracking board and the procedure note.
 - **Case 7** (Priya Raman): Bay 5, ESI 2, bus rollover. Open tibia fracture, antibiotics given.
   Validate: Bay 5 orders on the tracking board.
-- **Case 8** (Elena Ortiz): Bay 6, ESI 2, bus rollover. Pelvic fracture, blood pressure dropping despite fluids.
-  Validate: Bay 6 vitals on the tracking board.
+- **Case 8** (Elena Ortiz, Sam Okafor): Bay 6, unstable pelvic fracture. Taken to OR 1 for pelvic packing. Massive transfusion protocol running (see Alert 4).
+  Validate: OR 1 on the OR schedule board and the blood bank MTP log.
 - **Case 9** (Priya Raman): Hallway 2, ESI 3, bus rollover. Multiple lacerations, stable.
   Validate: Hallway 2 on the tracking board.
 - **Case 10** (Priya Raman): Bay 8, ESI 2, bus rollover. Child, 9 years old, abdominal pain with a seatbelt mark. Ultrasound negative, needs observation.
