@@ -95,28 +95,41 @@ Report it under one of those, or add a topic with `/topic add`.*
 
 > `/update Risk 1 provider replied, review scheduled for the 5th`
 
-Agent edits the existing line in `topics/risks.md`:
+Agent: *How would someone verify this?*
+
+> `provider's calendar invite for the 5th`
+
+Agent edits the entry in `topics/risks.md`, replacing its validation
+line so it matches the new information:
 
 ```markdown
 - **Risk 1** (Alice): The payment provider hasn't signed off on the new checkout flow. Review scheduled for the 5th.
-  Validate: Check the sign-off thread with the payment provider.
+  Validate: Provider's calendar invite for the 5th.
 ```
 
 ### A different person updates
 
 > `/update Risk 1 review done, they asked for one change to the receipt email`
 
-Agent adds Charlie's name since he's not the original reporter, and
+Agent: *How would someone verify this?*
+
+> `review notes in the sign-off thread`
+
+Agent adds Charlie's name since they're not the original reporter, and
 mentions that Decision 1 refers to this risk:
 
 ```markdown
 - **Risk 1** (Alice, Charlie): The payment provider hasn't signed off on the new checkout flow. Review done — one change requested to the receipt email.
-  Validate: Check the sign-off thread with the payment provider.
+  Validate: Review notes in the sign-off thread with the payment provider.
 ```
 
 ### Resolving an entry
 
 > `/resolve Risk 1 receipt email fixed, provider signed off`
+
+Agent: *How would someone verify this?*
+
+> `sign-off thread, signed on the 7th`
 
 ```markdown
 - **Risk 1** (Alice, Charlie): Resolved. The payment provider signed off on the new checkout flow after a fix to the receipt email.
@@ -129,9 +142,10 @@ mentions that Decision 1 refers to this risk:
 
 ### Finding related entries
 
-> `/relate I'm about to change the checkout page copy`
+> `/relate risks I'm about to change the checkout page copy`
 
-Agent searches all topics and returns:
+Agent searches the risks topic — its status cache first, then the
+full text of matching entries only — and returns:
 
 > - **Risk 1** (Alice, Charlie): Resolved. The payment provider signed off on the new checkout flow after a fix to the receipt email.
 >   Validate: Check the sign-off thread with the payment provider — sign-off is on the 7th.
@@ -146,8 +160,8 @@ There's no cache yet, so the agent reads `topics/risks.md` once,
 writes `status/risks.md`, commits it, and shows it:
 
 > **Risks status** — Open: 1 · Resolved: 1
-> - **Risk 2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. ⏳ *5 days since last update.*
-> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout.
+> - **Risk 2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. · Validate: Hosting plan limits page. ⏳ *5 days since last update.*
+> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout. · Validate: Sign-off thread with the provider.
 
 Agent: *push to main?*
 
@@ -158,8 +172,8 @@ Agent: *push to main?*
 The agent shows the cache without reading the topic file:
 
 > **Risks status** — Open: 1 · Resolved: 1
-> - **Risk 2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. ⚠️ *7 days since last update.*
-> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout.
+> - **Risk 2** (Bob) · updated 2026-08-09: Launch-day traffic may exceed the current plan's limits. · Validate: Hosting plan limits page. ⚠️ *7 days since last update.*
+> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout. · Validate: Sign-off thread with the provider.
 >
 > Cached 2026-08-14 09:12 · 2 changes since.
 
@@ -172,9 +186,9 @@ cache, applies them, commits the updated `status/risks.md`, and shows
 it:
 
 > **Risks status** — Open: 2 · Resolved: 1
-> - **Risk 3** (Diana) · updated 2026-08-16: The app store review may take longer than a week.
-> - **Risk 2** (Bob, Charlie) · updated 2026-08-15: Launch-day traffic may exceed the current plan's limits. Upgrade requested.
-> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout.
+> - **Risk 3** (Diana) · updated 2026-08-16: The app store review may take longer than a week. · Validate: App store review status.
+> - **Risk 2** (Bob, Charlie) · updated 2026-08-15: Launch-day traffic may exceed the current plan's limits. Upgrade requested. · Validate: Hosting plan limits page.
+> - **Risk 1** (Alice, Charlie) · updated 2026-08-07: Resolved. Provider signed off on checkout. · Validate: Sign-off thread with the provider.
 
 Agent: *push to main?*
 
@@ -185,7 +199,8 @@ current and doesn't ask.
 
 > `/history Risk 1`
 
-Agent shows the complete git log with diffs for that entry.
+Agent shows one line per change: who, when, and the commit message.
+`/history Risk 1 full` also shows the changed lines.
 
 ---
 
