@@ -9,5 +9,5 @@ Entry name: Alert
   Validate: Current pharmacy shortage bulletin.
 - **Alert 3** (Elena Ortiz, Marcus Lee): Resolved. Code orange stood down at 14:00. 17 patients received, 9 admitted.
   Validate: Code orange status page.
-- **Alert 4** (Tom Becker): Resupply arrived. O-negative back to 18 units.
+- **Alert 4** (Tom Becker): Resolved. O-negative stock back to normal at 18 units.
   Validate: O-negative count on the blood bank stock board.
