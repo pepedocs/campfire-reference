@@ -125,6 +125,11 @@ Git handles what would otherwise need custom infrastructure:
 - **History** — `git log` and `git blame` show who changed what, when.
 - **Auditability** — immutable commit log. Nothing is lost.
 
+Every commit the agent makes is labelled — `[campfire]` for knowledge,
+`[campfire-status]` for status caches — so the team's knowledge history
+can be read on its own with `git log --grep='^\[campfire\]'`, without
+changes to campfire itself mixed in.
+
 ### What the agent provides
 
 - Writes entries on behalf of users.

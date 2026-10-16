@@ -191,18 +191,22 @@ Agent shows the complete git log with diffs for that entry.
 
 ## What Git captures
 
-Every action above produces a commit. The full trail is always available:
+Every action above produces a commit, labelled so it can be told apart
+from changes to campfire itself. To see only the team's knowledge:
 
 ```
-$ git log --oneline
+$ git log --oneline --format='%h %an: %s' --grep='^\[campfire\]'
 
-a1b2c3d Charlie: resolve Risk 1: receipt email fixed, provider signed off
-d4e5f6g Charlie: update Risk 1: review done, one change requested
-h7i8j9k Alice: update Risk 1: review scheduled for the 5th
-l0m1n2o Diana: report Note 1: out from the 6th to the 8th
-p3q4r5s Bob: report Decision 1: launch moves to the 10th
-t6u7v8w Alice: report Risk 1: provider hasn't signed off on checkout
-x9y0z1a Alice: add topics: risks, decisions
+a1b2c3d Charlie: [campfire] resolve Risk 1: receipt email fixed, provider signed off
+d4e5f6g Charlie: [campfire] update Risk 1: review done, one change requested
+h7i8j9k Alice: [campfire] update Risk 1: review scheduled for the 5th
+l0m1n2o Diana: [campfire] report Note 1: out from the 6th to the 8th
+p3q4r5s Bob: [campfire] report Decision 1: launch moves to the 10th
+t6u7v8w Alice: [campfire] report Risk 1: provider hasn't signed off on checkout
+x9y0z1a Alice: [campfire] add topics: risks, decisions
 ```
+
+Status cache commits are labelled `[campfire-status]`, and changes to
+campfire itself have no label.
 
 Who said what, when they said it, and exactly what changed — all auditable.

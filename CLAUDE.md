@@ -174,8 +174,8 @@ Open: 1 · Resolved: 1
 4. **No cache yet:** this is the only time to read the whole topic
    file. Build the cache from it, taking dates from `git blame`.
    Don't ask first.
-5. **Commit** the new or updated cache on its own ("update status
-   for <topic>"), show it, then ask: "push to <branch>?"
+5. **Commit** the new or updated cache on its own
+   (`[campfire-status] update status for <topic>`), show it, then ask: "push to <branch>?"
 
 Other commands never touch `status/`.
 
@@ -257,6 +257,24 @@ to check. An entry stays stale until someone updates it.
 
 Commit automatically — don't ask. After committing, ask:
 "push to <branch>?" If they say yes, run `git push -u origin <branch>`.
+
+### Commit labels
+
+Every commit you make starts with a label, so campfire's commits can
+be told apart from changes to campfire itself (`CLAUDE.md`, commands,
+updates pulled from the reference):
+
+- `[campfire]` — knowledge changes: reporting, updating, resolving,
+  removing entries, and adding topics.
+  `[campfire] report Risk 3: app store review may take longer than a week`
+- `[campfire-status]` — status cache commits.
+  `[campfire-status] update status for risks`
+
+After the label, say what happened and to which entry or topic. Never
+commit without a label, and never use these labels for anything else.
+
+To see only the team's knowledge history:
+`git log --grep='^\[campfire\]'`
 
 ### Target branch
 
