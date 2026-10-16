@@ -11,7 +11,7 @@ Entry name: Capacity
   Validate: Waiting count on the ED tracking board.
 - **Capacity 5** (Marcus Lee): ED on diversion for non-critical ambulances during code orange.
   Validate: Diversion status on the regional ambulance portal.
-- **Capacity 6** (Tom Becker): Today's elective OR list is suspended. ORs 1–4 are held for the mass-casualty incident (see Alert 3).
+- **Capacity 6** (Tom Becker): Resolved. Today's electives are cancelled and rebooked from Monday. ORs back to the normal schedule.
   Validate: OR schedule board.
 - **Capacity 7** (Grace Ali): Surge unit in day surgery has 9 of 12 beds in use. It stays open through the weekend.
   Validate: Surge unit beds on the bed management board.
