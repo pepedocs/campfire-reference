@@ -9,7 +9,7 @@ Entry name: Capacity
   Validate: OR schedule board and the on-call roster.
 - **Capacity 4** (Priya Raman): Waiting room at 41 after the incident. Non-urgent patients are being offered the urgent care center across the road.
   Validate: Waiting count on the ED tracking board.
-- **Capacity 5** (Marcus Lee): ED on diversion for non-critical ambulances during code orange.
+- **Capacity 5** (Marcus Lee): Resolved. Diversion lifted at 14:00 with code orange.
   Validate: Diversion status on the regional ambulance portal.
 - **Capacity 6** (Tom Becker): Resolved. Today's electives are cancelled and rebooked from Monday. ORs back to the normal schedule.
   Validate: OR schedule board.
