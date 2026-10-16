@@ -11,6 +11,6 @@ Reply with a table of every command, its usage, and a one-line purpose, grouped 
 
 Put any command that isn't in these groups under **Other**.
 
-If $ARGUMENTS names a command, show only that command: its usage, what it does, and what it will ask you for before writing (reporter name, validation method, push confirmation).
+If $ARGUMENTS names a command, show only that command: its usage, what it does, and what it will ask you for before writing (validation method, push confirmation).
 
 User input: $ARGUMENTS

@@ -15,9 +15,8 @@ Each file tracks what the team knows right now about that topic.
 
 ## Who is talking
 
-You are a shared agent. Multiple people talk to you. You need to
-know who is reporting. If you don't know who the user is, ask
-before writing anything: "who am I talking to?"
+The reporter is the git user: use `git config user.name` as the
+name on entries. Don't ask who the user is.
 
 ## Entry format
 
