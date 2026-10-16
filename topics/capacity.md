@@ -5,7 +5,7 @@ Entry name: Capacity
 
 - **Capacity 2** (Grace Ali): Resolved. No admitted patients boarding in the ED.
   Validate: Boarding count on the bed management board.
-- **Capacity 3** (Tom Becker): Second on-call team called in. OR 2 opens at 01:00. Overnight staffing is still 1 OR on most nights.
+- **Capacity 3** (Tom Becker): Overnight OR staffing changes from 19 Oct: 2 ORs staffed overnight on Friday and Saturday. Other nights are still 1 OR.
   Validate: OR schedule board and the on-call roster.
 - **Capacity 4** (Priya Raman): Waiting room at 41 after the incident. Non-urgent patients are being offered the urgent care center across the road.
   Validate: Waiting count on the ED tracking board.
